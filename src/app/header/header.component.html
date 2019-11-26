@@ -1,0 +1,18 @@
+<div class="flex-row bg-primary justify-content-around header">
+    <div class="flex-row align-items-center justify-content-between w-80">
+        <div class="flex-row align-items-center">
+            <i class="material-icons">
+                headset
+            </i>
+            <span class="margin-h">Spotifree</span>
+        </div>
+        <div class="flex-row align-items-center">
+            <div class="margin-h" *ngIf="!isLogged">
+                <button mat-raised-button color="primary">Cadastre-se</button>
+            </div>
+            <div>
+                <button mat-raised-button (click)="doLogin()">{{ isLogged ? 'Deslogar' : 'Logar' }}</button>
+            </div>
+        </div>
+    </div>
+</div>

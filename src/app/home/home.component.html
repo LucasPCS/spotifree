@@ -1,0 +1,30 @@
+<div class="w-100 h-100">
+    <app-header [isLoggedIn]="isUserLoggedIn" (login)="doLogin($event)"></app-header>
+    <div *ngIf="!isUserLoggedIn">
+        <div class="header-splash flex-row align-items-center justify-content-around">
+            <h1 style="color:#fff">Teste</h1>
+        </div>
+        <app-footer></app-footer>
+    </div>
+    <div *ngIf="isUserLoggedIn" class="player flex-row" [class.align-items-stretch]="!displayPlaylist" [class.align-items-start]="displayPlaylist">
+        <app-player [displayPlaylist]="displayPlaylist" style="width:100%"></app-player>
+        <button mat-raised-button (click)="togglePlayList()">
+            <i class="material-icons" *ngIf="!displayPlaylist">
+                keyboard_arrow_up
+            </i>
+            <i class="material-icons" *ngIf="displayPlaylist">
+                keyboard_arrow_down
+            </i>
+        </button>
+        <!-- <mat-drawer-container class="player-container" autosize>
+            <mat-drawer #drawer class="player-sidenav" mode="side">
+            </mat-drawer>
+            
+            <div class="player-sidenav-content">
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    Toggle sidenav
+                </button>
+            </div>    
+        </mat-drawer-container> -->
+    </div>
+</div>
