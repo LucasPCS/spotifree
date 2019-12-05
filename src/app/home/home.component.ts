@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
     
-    isUserLoggedIn = false;
+    isUserLoggedIn = true;
     displayPlaylist = false;
     
     constructor() { }

@@ -1,0 +1,13 @@
+<button mat-flat-button color="accent">
+    <i class="material-icons">
+        play_arrow
+    </i>
+</button>
+
+<div *ngFor="let music of playlist.musics" class="flex-column">
+    <mat-card>
+        <mat-card-content>
+            {{ music.Dir_music }}
+        </mat-card-content>
+    </mat-card>
+</div>

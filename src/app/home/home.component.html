@@ -6,25 +6,23 @@
         </div>
         <app-footer></app-footer>
     </div>
-    <div *ngIf="isUserLoggedIn" class="player flex-row" [class.align-items-stretch]="!displayPlaylist" [class.align-items-start]="displayPlaylist">
-        <app-player [displayPlaylist]="displayPlaylist" style="width:100%"></app-player>
-        <button mat-raised-button (click)="togglePlayList()">
-            <i class="material-icons" *ngIf="!displayPlaylist">
-                keyboard_arrow_up
-            </i>
-            <i class="material-icons" *ngIf="displayPlaylist">
-                keyboard_arrow_down
-            </i>
-        </button>
-        <!-- <mat-drawer-container class="player-container" autosize>
-            <mat-drawer #drawer class="player-sidenav" mode="side">
-            </mat-drawer>
-            
-            <div class="player-sidenav-content">
-                <button type="button" mat-button (click)="drawer.toggle()">
-                    Toggle sidenav
-                </button>
-            </div>    
-        </mat-drawer-container> -->
+    <div *ngIf="isUserLoggedIn" class="h-100">
+        <div class="flex-row h-100">
+            <app-side-menu class="w-30 h-100"></app-side-menu>
+            <div style="padding:10px 0 0 10px">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <div class="player flex-row" [class.align-items-stretch]="!displayPlaylist" [class.align-items-start]="displayPlaylist">
+            <app-player [displayPlaylist]="displayPlaylist" style="width:100%"></app-player>
+            <button mat-raised-button (click)="togglePlayList()">
+                <i class="material-icons" *ngIf="!displayPlaylist">
+                    keyboard_arrow_up
+                </i>
+                <i class="material-icons" *ngIf="displayPlaylist">
+                    keyboard_arrow_down
+                </i>
+            </button>
+        </div>
     </div>
 </div>
