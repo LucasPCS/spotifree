@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Event } from '@angular/router';
+import { Track } from 'ngx-audio-player';
 
 @Component({
     selector: 'app-home',
