@@ -1,4 +1,4 @@
-<div *ngIf="playlists != null && playlist.Musics != null && playlist.Musics.length > 0">
+<div *ngIf="playlist != null && playlist?.Musics != null && playlist?.Musics?.length > 0">
     <button mat-flat-button color="accent" (click)="playSet($event)">
         <i class="material-icons">
             play_arrow
@@ -22,6 +22,6 @@
     </table>
 </div>
 
-<div *ngIf="playlists == null || playlists.Musics == null || playlists.Musics.length == 0">
+<div *ngIf="playlist == null || playlist.Musics == null || playlist.Musics.length == 0">
     <span>Nenhuma música adicionada à esta playlist ainda. Adicione músicas à sua playlist!</span>
 </div>

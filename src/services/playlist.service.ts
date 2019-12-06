@@ -24,4 +24,9 @@ export class PlaylistService {
         let applicationJson = {"Content-Type": "application/json"}
         return this.http.post<Playlist>(`${apiURL}/List`, {fk_user: idUser, is_album: 0, name: name}, {headers: applicationJson})
     }
+
+    addMusicToPlaylist(id_music: number, id_list: number): Observable<Playlist> {
+        let applicationJson = {"Content-Type": "application/json"}
+        return this.http.post<Playlist>(`${apiURL}/musiclist/`, {id_music: id_music, id_list: id_list, add_music: 1}, {headers: applicationJson})
+    }
 }

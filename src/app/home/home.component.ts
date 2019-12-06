@@ -11,7 +11,7 @@ import { NewDialogComponent } from 'src/dialogs/new-dialog/new-dialog.component'
 })
 export class HomeComponent implements OnInit {
     
-    isUserLoggedIn = true;
+    isUserLoggedIn = false;
     displayPlaylist = false;
     
     constructor(public dialog: MatDialog) { }

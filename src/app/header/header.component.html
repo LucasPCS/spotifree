@@ -1,11 +1,13 @@
 <div class="flex-row bg-primary justify-content-around header">
     <div class="flex-row align-items-center justify-content-between w-80">
-        <div class="flex-row align-items-center">
-            <i class="material-icons">
-                headset
-            </i>
-            <span class="margin-h">Spotifree</span>
-        </div>
+        <a [routerLink]="'/'" style="color:#fff; text-decoration: none;">
+            <div class="flex-row align-items-center">
+                <i class="material-icons">
+                    headset
+                </i>
+                <span class="margin-h">Spotifree</span>
+            </div>
+        </a>
         <div class="flex-row align-items-center">
             <div class="margin-h" *ngIf="!isLogged">
                 <button mat-raised-button color="primary">Cadastre-se</button>

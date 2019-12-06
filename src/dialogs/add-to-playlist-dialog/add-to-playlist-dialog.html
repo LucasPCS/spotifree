@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Editar</h1>
+<div class="flex-column">
+    <mat-form-field>
+        <select matNativeControl required [(ngModel)]="selected">
+            <option *ngFor="let playlist of playlists" [ngValue]="playlist.Id">
+                {{ playlist.Name }}
+            </option>
+        </select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Fechar</button>
+    <button mat-button (click)="addMusicToPlaylist()">Salvar</button>
+</div>

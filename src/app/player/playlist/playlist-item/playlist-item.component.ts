@@ -37,7 +37,7 @@ export class PlaylistItemComponent implements OnInit {
                 track["link"] = fileURL+music["Dir_music"];
                 this.tracks.push(track);
             });
-            console.log()
+            console.log(this.playlist)
         })
     }
 

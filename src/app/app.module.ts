@@ -34,6 +34,7 @@ import { CategoryComponent } from './player/category/category.component';
 import { CategoryItemComponent } from './player/category/category-item/category-item.component';
 import { NewDialogComponent } from 'src/dialogs/new-dialog/new-dialog.component';
 import { EditMusicComponent } from 'src/dialogs/edit-music-dialog/edit-music-dialog.component';
+import { AddToPlaylistDialogComponent } from 'src/dialogs/add-to-playlist-dialog/add-to-playlist-dialog.component';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { EditMusicComponent } from 'src/dialogs/edit-music-dialog/edit-music-dia
         CategoryComponent,
         CategoryItemComponent,
         NewDialogComponent,
-        EditMusicComponent
+        EditMusicComponent,
+        AddToPlaylistDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -77,7 +79,8 @@ import { EditMusicComponent } from 'src/dialogs/edit-music-dialog/edit-music-dia
     bootstrap: [AppComponent],
     entryComponents: [
         NewDialogComponent,
-        EditMusicComponent
+        EditMusicComponent,
+        AddToPlaylistDialogComponent
     ]
 })
 export class AppModule { }
