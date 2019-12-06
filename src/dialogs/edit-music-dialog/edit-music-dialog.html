@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Editar</h1>
+<div class="flex-column">
+    <mat-form-field>
+        <input matInput [(ngModel)]="musicName" placeholder="Título" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+        <select matNativeControl required [(ngModel)]="selected">
+            <option *ngFor="let category of categories" [ngValue]="category.Id">
+                {{ category.Name }}
+            </option>
+        </select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Fechar</button>
+    <button mat-button (click)="editMusic()">Salvar</button>
+</div>

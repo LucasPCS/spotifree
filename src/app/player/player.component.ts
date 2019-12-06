@@ -31,28 +31,28 @@ export class PlayerComponent implements OnInit {
     ngOnInit() {
         this.musicService.getMusicById(6)
         .subscribe(res => {
-            res.dir_music = res.dir_music.replace(/\~/g, "");
+            res.Dir_music = res.Dir_music.replace(/\~/g, "");
             let track = {
-                title: res.name,
-                link: fileURL+res.dir_music
+                title: res.Name,
+                link: fileURL+res.Dir_music
             };
             this.msaapPlaylist.push(track);
         });
         this.musicService.getMusicById(7)
         .subscribe(res => {
-            res.dir_music = res.dir_music.replace(/\~/g, "");
+            res.Dir_music = res.Dir_music.replace(/\~/g, "");
             let track = {
-                title: res.name,
-                link: fileURL+res.dir_music
+                title: res.Name,
+                link: fileURL+res.Dir_music
             };
             this.msaapPlaylist.push(track);
         });
         this.musicService.getMusicById(8)
         .subscribe(res => {
-            res.dir_music = res.dir_music.replace(/\~/g, "");
+            res.Dir_music = res.Dir_music.replace(/\~/g, "");
             let track = {
-                title: res.name,
-                link: fileURL+res.dir_music
+                title: res.Name,
+                link: fileURL+res.Dir_music
             };
             this.msaapPlaylist.push(track);
         });

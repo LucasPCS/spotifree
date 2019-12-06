@@ -1,1 +1,28 @@
-<p>music works!</p>
+<div class="flex-row align-items-stretch">
+    <div *ngFor="let music of musics" class="play-box">
+        <button style="cursor: default;" mat-raised-button>
+            <div class="flex-column" style="padding:8px">
+                <button mat-flat-button color="accent" (click)="playMusic(music)">
+                    <i class="material-icons" style="font-size:2em">
+                        play_arrow
+                    </i>
+                </button>
+                <div class="flex-row justify-content-between align-items-center">
+                    <span>
+                        {{ music.Name }}
+                    </span>
+                    <button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{music: music}">
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </button>
+    </div>
+</div>
+
+<mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent let-music="music">
+        <button mat-menu-item (click)="editMusicInfo(music)">Editar informações da música</button>
+        <button mat-menu-item (click)="addMusicToPlaylist(music)">Adicionar a playlist</button>
+    </ng-template>
+</mat-menu>

@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Novo</h1>
+<div mat-dialog-content>
+    <div class="flex-column align-items-start" *ngIf="!isMusic && !isPlaylist">
+        <button mat-stroked-button style="margin-bottom:10px" (click)="addPlaylist()">
+            <i class="material-icons">
+                playlist_add
+            </i>
+            <span>
+                Nova Playlist
+            </span>
+        </button>
+        <button mat-stroked-button (click)="addMusic()">
+            <i class="material-icons">
+                add
+            </i>
+            <span>
+                Nova Música
+            </span>
+        </button>
+    </div>
+    <div *ngIf="isMusic" class="flex-column">
+        <mat-form-field>
+            <input matInput [(ngModel)]="musicName" placeholder="Título" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <select matNativeControl required [(ngModel)]="selected">
+                <option *ngFor="let category of categories" [ngValue]="category.Id">
+                    {{ category.Name }}
+                </option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+            <button mat-stroked-button (click)="uploader.click()">Escolher arquivo</button>
+        </mat-form-field>
+        <input hidden #uploader (change)="uploadFile($event.target.files)" type="file">
+    </div>
+    <div *ngIf="isPlaylist">
+        <mat-form-field>
+            <input matInput [(ngModel)]="playlistName" placeholder="Nome da playlist" autocomplete="off">
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Fechar</button>
+    <button mat-button *ngIf="isMusic" (click)="sendMusic()">Salvar</button>
+    <button mat-button *ngIf="isPlaylist" (click)="sendPlaylist()">Salvar</button>
+    <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+</div>

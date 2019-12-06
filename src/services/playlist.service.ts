@@ -9,22 +9,19 @@ import { apiURL } from './constants';
     providedIn: 'root'
 })
 export class PlaylistService {
-    
+
     constructor(private http: HttpClient) { }
 
-    getPlaylistById(id): Observable<Playlist> {
-        return this.http.get(`${apiURL}/list/${id}`)
-        .pipe(
-            map(res => {
-                let playlist: Playlist = new Playlist();
-                playlist.created = res["Created"];
-                playlist.id = res["Id"];
-                playlist.is_album = res["Is_Album"];
-                playlist.name = res["Name"];
-                playlist.user = res["User"];
-                playlist.musics = res["Musics"]
-                return playlist
-            })
-        )
+    getPlaylistByUserId(id: number): Observable<Playlist[]> {
+        return this.http.get<Playlist[]>(`${apiURL}/List/GetByUser/${id}`)
+    }
+
+    getPlaylistById(id: number): Observable<Playlist> {
+        return this.http.get<Playlist>(`${apiURL}/List/GetById/${id}`)
+    }
+
+    addPlaylist(idUser: number, name: string): Observable<Playlist> {
+        let applicationJson = {"Content-Type": "application/json"}
+        return this.http.post<Playlist>(`${apiURL}/List`, {fk_user: idUser, is_album: 0, name: name}, {headers: applicationJson})
     }
 }

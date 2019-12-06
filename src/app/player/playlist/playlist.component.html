@@ -1,16 +1,14 @@
-<div *ngFor="let playlist of playlists">
-    <a [routerLink]="['/playlist', playlist.id]">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>
-                    <i class="material-icons" style="font-size:2em">
-                        playlist_play
-                    </i>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                {{ playlist.name }}
-            </mat-card-content>
-        </mat-card>
-    </a>
+<div class="flex-row align-items-stretch">
+    <div *ngFor="let playlist of playlists" class="play-box">
+        <a mat-raised-button  [routerLink]="['/playlist', playlist.Id]">
+            <div class="flex-column" style="padding:5px">
+                <i class="material-icons" style="font-size:2em">
+                    playlist_play
+                </i>
+                <span>
+                    {{ playlist.Name }}
+                </span>
+            </div>
+        </a>
+    </div>
 </div>

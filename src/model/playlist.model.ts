@@ -1,10 +1,10 @@
 import { Music } from './music.model';
 
 export class Playlist {
-    id: number;
-    name: string;
-    is_album: number;
-    created: string;
-    user: any;
-    musics: any[];
+    Id: number;
+    Name: string;
+    Is_Album: number;
+    Created: string;
+    User: any;
+    Musics: any[];
 }

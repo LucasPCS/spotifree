@@ -1,7 +1,7 @@
 export class Music {
-    id: number;
-    name: string;
-    dir_music: string;
-    created: string;
+    Id: number;
+    Name: string;
+    Dir_music: string;
+    Created: string;
     category: any;
 }

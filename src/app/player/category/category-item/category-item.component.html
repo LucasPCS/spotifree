@@ -1,1 +1,19 @@
-<p>category-item works!</p>
+<div class="flex-row align-items-stretch">
+    <div *ngFor="let music of category.Musics" class="play-box">
+        <button mat-raised-button (click)="playMusic(music)">
+            <div class="flex-column" style="padding:5px">
+                <i class="material-icons" style="font-size:2em">
+                    play_arrow
+                </i>
+                <span>
+                    {{ music.Name }}
+                </span>
+            </div>
+        </button>
+    </div>
+    <div *ngIf="category.Musics == null || category.Musics.length == 0">
+        <span>
+            Nenhuma música encontrada! Adicione músicas a esta categoria!
+        </span>
+    </div>
+</div>

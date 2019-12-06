@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,6 +32,8 @@ import { PlaylistItemComponent } from './player/playlist/playlist-item/playlist-
 import { EventEmitterService } from 'src/services/event-emitter.service';
 import { CategoryComponent } from './player/category/category.component';
 import { CategoryItemComponent } from './player/category/category-item/category-item.component';
+import { NewDialogComponent } from 'src/dialogs/new-dialog/new-dialog.component';
+import { EditMusicComponent } from 'src/dialogs/edit-music-dialog/edit-music-dialog.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +47,9 @@ import { CategoryItemComponent } from './player/category/category-item/category-
         MusicComponent,
         PlaylistItemComponent,
         CategoryComponent,
-        CategoryItemComponent
+        CategoryItemComponent,
+        NewDialogComponent,
+        EditMusicComponent
     ],
     imports: [
         BrowserModule,
@@ -50,9 +62,22 @@ import { CategoryItemComponent } from './player/category/category-item/category-
         HttpClientModule,
         MatListModule,
         MatCardModule,
-        MatTableModule
+        MatTableModule,
+        MatDialogModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatStepperModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatMenuModule,
+        MatIconModule
     ],
     providers: [EventEmitterService],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents: [
+        NewDialogComponent,
+        EditMusicComponent
+    ]
 })
 export class AppModule { }
